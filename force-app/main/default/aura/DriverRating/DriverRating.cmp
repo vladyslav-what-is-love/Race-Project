@@ -1,0 +1,22 @@
+<aura:component controller = "DriverViewController" implements = "flexipage:availableForAllPageTypes">
+
+    <aura:attribute name ="drivers" type="Object" />
+    <aura:attribute name ="columns" type="List" />
+
+    <aura:handler name = "init" value = "{!this}" action ="{!c.doInit}"/>
+
+
+    <div class="slds-box slds-theme_default">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="9">
+                <lightning:datatable 
+                    keyField="id"
+                    data="{! v.drivers }"
+                    columns="{! v.columns }"
+                    hideCheckboxColumn="true"
+                />
+            </lightning:layoutItem>
+        </lightning:layout>
+      </div>
+
+</aura:component>	
